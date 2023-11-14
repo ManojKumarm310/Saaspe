@@ -24,4 +24,5 @@ Feature: Department
     
 
   #  Examples: 
-      
+      |Department Name|Department Budget|Fowner mail|Fowner name|
+			|Maintainance|13000|vyvewyru@afia.pro|Postumus|	
