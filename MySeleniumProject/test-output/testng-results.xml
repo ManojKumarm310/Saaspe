@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-10-24T13:09:13 IST" name="Test Suite" finished-at="2023-10-24T13:09:58 IST" duration-ms="44630">
+    <groups>
+    </groups>
+    <test started-at="2023-10-24T13:09:13 IST" name="Saaspe-Department" finished-at="2023-10-24T13:09:26 IST" duration-ms="12741">
+      <class name="saaspeTestCase.SingleDepartmentOnboarding">
+        <test-method is-config="true" signature="launchapp()[pri:0, instance:saaspeTestCase.SingleDepartmentOnboarding@2ddc9a9f]" started-at="2023-10-24T13:09:13 IST" name="launchapp" finished-at="2023-10-24T13:09:18 IST" duration-ms="5066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchapp -->
+        <test-method signature="test1(java.lang.String,java.lang.String)[pri:0, instance:saaspeTestCase.SingleDepartmentOnboarding@2ddc9a9f]" started-at="2023-10-24T13:09:18 IST" name="test1" finished-at="2023-10-24T13:09:25 IST" duration-ms="6146" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rishi.p@mind-graph.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[P@ssword-1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2(java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:saaspeTestCase.SingleDepartmentOnboarding@2ddc9a9f]" started-at="2023-10-24T13:09:25 IST" name="test2" finished-at="2023-10-24T13:09:25 IST" duration-ms="662" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Scada]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[11000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[USD]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method signature="test3(java.lang.String,java.lang.String)[pri:2, instance:saaspeTestCase.SingleDepartmentOnboarding@2ddc9a9f]" started-at="2023-10-24T13:09:25 IST" name="test3" finished-at="2023-10-24T13:09:26 IST" duration-ms="596" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[foxomife@lyft.live]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[John]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+        <test-method is-config="true" signature="closeapp()[pri:0, instance:saaspeTestCase.SingleDepartmentOnboarding@2ddc9a9f]" started-at="2023-10-24T13:09:26 IST" name="closeapp" finished-at="2023-10-24T13:09:26 IST" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeapp -->
+      </class> <!-- saaspeTestCase.SingleDepartmentOnboarding -->
+    </test> <!-- Saaspe-Department -->
+    <test started-at="2023-10-24T13:09:26 IST" name="Single User Onboarding" finished-at="2023-10-24T13:09:58 IST" duration-ms="31810">
+      <class name="saaspeTestCase.SingleUserOnboarding">
+        <test-method is-config="true" signature="launchapp()[pri:0, instance:saaspeTestCase.SingleUserOnboarding@8519cb4]" started-at="2023-10-24T13:09:26 IST" name="launchapp" finished-at="2023-10-24T13:09:30 IST" duration-ms="3924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchapp -->
+        <test-method signature="userTest1(java.lang.String,java.lang.String)[pri:1, instance:saaspeTestCase.SingleUserOnboarding@8519cb4]" started-at="2023-10-24T13:09:30 IST" name="userTest1" finished-at="2023-10-24T13:09:47 IST" duration-ms="17221" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rishi.p@mind-graph.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[P@ssword-1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userTest1 -->
+        <test-method signature="userTest2(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:2, instance:saaspeTestCase.SingleUserOnboarding@8519cb4]" started-at="2023-10-24T13:09:47 IST" name="userTest2" finished-at="2023-10-24T13:09:49 IST" duration-ms="1679" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Neptuno]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Raghul]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cisigomy@clout.wiki]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Saylor]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[IT]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userTest2 -->
+        <test-method signature="userTest3(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:3, instance:saaspeTestCase.SingleUserOnboarding@8519cb4]" started-at="2023-10-24T13:09:49 IST" name="userTest3" finished-at="2023-10-24T13:09:58 IST" duration-ms="8784" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[02/03/2023]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Permanent]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Team Lead]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9600412438]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userTest3 -->
+        <test-method is-config="true" signature="closeapp()[pri:0, instance:saaspeTestCase.SingleUserOnboarding@8519cb4]" started-at="2023-10-24T13:09:58 IST" name="closeapp" finished-at="2023-10-24T13:09:58 IST" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeapp -->
+      </class> <!-- saaspeTestCase.SingleUserOnboarding -->
+    </test> <!-- Single User Onboarding -->
+  </suite> <!-- Test Suite -->
+</testng-results>
