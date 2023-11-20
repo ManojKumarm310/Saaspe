@@ -18,6 +18,8 @@ public class SingleDepartmentOnboarding  {
 	
 
 	public WebDriver driver; 
+	LoginPage lp;
+	SingleDepartment sd;
 	
 //	LoginPage lp = new LoginPage(driver);
 	
@@ -37,25 +39,31 @@ public class SingleDepartmentOnboarding  {
 		driver.get(url);
 	}
 	
-	LoginPage lp = new LoginPage(driver);
+//	LoginPage lp = new LoginPage(driver);
+//	lp.
 	
-	SingleDepartment sd = new SingleDepartment(driver);
+	//SingleDepartment sd = new SingleDepartment(driver);
 	
 	@Then("Enter the username as {string}")
-	public void enter_the_username_as(String username) {
+	public void enter_the_username_as(String usrname) {
 	    
-		lp.username(username);
+		lp = new LoginPage(driver);
+		lp.username(usrname);
+		
 	}
 	
 	@Then("Enter the password as {string}")
-	public void enter_the_password_as(String password) {
-	    
-		lp.password(password);
+	public void enter_the_password_as(String upassword) {
+		
+		lp = new LoginPage(driver);
+		lp.password(upassword);
+		
 	}
 	
 	@Then("Click on the login button")
 	public void click_on_the_login_button() {
-	    
+		
+		lp = new LoginPage(driver);
 		lp.clickLogin();
 	}
 	
@@ -64,12 +72,14 @@ public class SingleDepartmentOnboarding  {
 	@Then("Enter the otp")
 	public void enter_the_otp() {
 		
+		lp = new LoginPage(driver);
 		lp.otp();
 		
 	}
 	@And("Click on the otp submit button")
 	public void click_on_the_otp_submit_button() {
 		
+		lp = new LoginPage(driver);
 		lp.otpSubmitButton();
 	    
 	}
@@ -77,53 +87,62 @@ public class SingleDepartmentOnboarding  {
 	@Then("Click on the Department from the menu")
 	public void click_on_the_department_from_the_menu() throws InterruptedException {
 	    
+		sd = new SingleDepartment(driver);
 		sd.department();
 	}
 	@Then("Click on the Add button in the page")
 	public void click_on_the_add_button_in_the_page() {
 	    
+		sd = new SingleDepartment(driver);
 		sd.addButton();
 	}
 	
 	@Then("Select the Single Department radio button")
 	public void select_the_single_department_radio_button() {
 	    
+		sd = new SingleDepartment(driver);
 		sd.singleRadio();
 	}
 	
 	@Then("Enter the department name {string}")
 	public void enter_the_department_name(String departname) {
 	    
+		sd = new SingleDepartment(driver);
 		sd.departmentName(departname);
 	}
 	
 	@Then("Enter the department budget {string}")
 	public void enter_the_department_budget(String departbudget) {
 	    
+		sd = new SingleDepartment(driver);
 		sd.departmentBudget(departbudget);
 	}
 	
 	 @Then("Select the department currency {string}")
 	public void select_the_department_currency(String departcurrency) {
 	    
+		 sd = new SingleDepartment(driver);
 		sd.departmentCurrency(departcurrency);
 	} 
 	
 	@Then("Enter the First Owner Mail id {string}")
 	public void enter_the_first_owner_mail_id(String fownermail) {
 	    
+		sd = new SingleDepartment(driver);
 		sd.firstOwnerMail(fownermail);
 	}
 	
 	@Then("Enter the First Owner name {string}")
 	public void enter_the_first_owner_name(String fownername) {
 	    
+		sd = new SingleDepartment(driver);
 		sd.firstOwnerName(fownername);
 	}
 	
 	@And("Click on the department submit button")
 	public void click_on_the_department_submit_button() {
 	    
+		sd = new SingleDepartment(driver);
 		sd.deptSubmit();
 	}
 

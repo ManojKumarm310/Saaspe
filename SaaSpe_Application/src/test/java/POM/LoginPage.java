@@ -68,13 +68,21 @@ public class LoginPage {
 		
 		public void username(String usrname) {
 			
+			
+			
+			
 			 driver.findElement(uname).sendKeys(usrname);
 		}
 		
 		public void password(String pass) {
 			
+			
 			driver.findElement(pwd).sendKeys(pass);
+			
+			 
 		}
+		
+		
 		
 		public void clickLogin() {
 			

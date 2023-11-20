@@ -12,9 +12,7 @@ Feature: Department
     Then Enter the username as "rishi.p@mind-graph.com"
     Then Enter the password as "P@ssword-1"
     Then Click on the login button
-  #  Then I enter the username as "rishi.p@mind-graph.com"
-  #  Then I enter the password as "P@ssword-1"
-   # Then I click on the login button in the page
+  
     Then Enter the otp
     And Click on the otp submit button
     Then Click on the Department from the menu
@@ -22,13 +20,13 @@ Feature: Department
     Then Select the Single Department radio button
     Then Enter the department name "<Department Name>"
     Then Enter the department budget "<Department Budget>"
-   # Then Select the department currency "<Department Currency>"
+    Then Select the department currency "<Department Currency>"
     Then Enter the First Owner Mail id "<Fowner mail>"
     Then Enter the First Owner name "<Fowner name>"
     And Click on the department submit button
     
     
 
-  #  Examples: 
-      |Department Name|Department Budget|Fowner mail|Fowner name|
-			|Maintainance|13000|vyvewyru@afia.pro|Postumus|	
+   Examples: 
+      |Department Name|Department Budget|Department Currency|Fowner mail|Fowner name|
+			|Maintainance|13000|MYR|vyvewyru@afia.pro|Postumus|	
