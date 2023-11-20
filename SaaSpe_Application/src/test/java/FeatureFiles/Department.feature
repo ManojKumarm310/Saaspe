@@ -7,10 +7,16 @@ Feature: Department
 
   @tag2
   Scenario Outline: Single Department Onboarding
-    Given Open the application with the url "https://sit-app.saaspe.com/"
-    Then I enter the username as "rishi.p@mind-graph.com"
-    Then I enter the password as "P@ssword-1"
-    Then I click on the login button in the page
+    # Given Open the application with the url "https://dev-app.saaspe.com/"
+    Given Open the application "https://dev-app.saaspe.com/"
+    Then Enter the username as "rishi.p@mind-graph.com"
+    Then Enter the password as "P@ssword-1"
+    Then Click on the login button
+  #  Then I enter the username as "rishi.p@mind-graph.com"
+  #  Then I enter the password as "P@ssword-1"
+   # Then I click on the login button in the page
+    Then Enter the otp
+    And Click on the otp submit button
     Then Click on the Department from the menu
     Then Click on the Add button in the page
     Then Select the Single Department radio button

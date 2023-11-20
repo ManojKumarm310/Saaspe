@@ -2,28 +2,51 @@ package POM;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SingleDepartment {
 	
-	WebDriver driver = new ChromeDriver();
+	WebDriver driver; 
 	
-	// Entering the Username
-	@FindBy (name = "emailAddress")
-	WebElement uname;
-	
-	// Entering the password
-	@FindBy (name = "password")
-	WebElement pwd;
-	
-	// Click on the login button
-	@FindBy (xpath = "//button[@type='submit']")
-	WebElement login;
+	public SingleDepartment(WebDriver driver) {
+		
+		this.driver = driver;
+		//PageFactory.initElements(driver, this);
+	}
 
-	// Department from side menu
+	By dep = By.xpath("//span[text()='Departments']");
+	
+	// Click on the add button
+	By add = By.xpath("(//button[@type='button'])[2]");
+	
+	// Click on the Single radio button
+	By singleRadio = By.xpath("//input[@class='ant-radio-input']");
+	
+	// Click on the department name
+	By dname = By.name("departmentName");
+	
+	// Click on the department budget
+	By dbudget = By.name("budget");
+	
+	// Click on the department currency
+	By deptcurrency = By.xpath("//span[@class='ant-select-selection-item']");
+	
+	// Click on the first owner mail
+	By fowner = By.name("ownerEmailAddress");
+	
+	// Click on the first owner name
+	By fname = By.name("ownerName");
+	
+	// Click on the submit button
+	By dsubmit = By.xpath("//button[@type='submit']");
+
+/*	// Department from side menu
 	@FindBy (xpath = "//span[text()='Departments']" )
 	WebElement dep;
 	
@@ -45,7 +68,7 @@ public class SingleDepartment {
 	
 	// Currency
 	@FindBy (xpath = "//span[@class='ant-select-selection-item']")
-	WebElement dcurrency;
+	WebElement currency;
 	
 	// Owner Mail address
 	@FindBy (name = "ownerEmailAddress")
@@ -57,78 +80,64 @@ public class SingleDepartment {
 	
 	// Submit button
 	@FindBy (xpath = "//button[@type='submit']")
-	WebElement sbutton;
+	WebElement sbutton; */
 	
 	// Creating Method for the webelements
 	
-	public void username(String uid) {
-		
-		uname.sendKeys(uid);
-	}
 	
-	public void password(String pass) {
-		pwd.sendKeys(pass);
-	}
-	
-	public void clickLogin() {
-		
-		login.click();
-	}
 	
 	public void department() throws InterruptedException {
 		
 		Thread.sleep(8000);
-		dep.click();
+		driver.findElement(dep).click();
 	}
 	
 	public void addButton() {
 		
-		add.click();
+		driver.findElement(add).click();
 	}
 	
 	public void singleRadio() {
 		
-		single.click();
+		driver.findElement(singleRadio).click();
 	}
 	
 	public void departmentName(String deptname) {
 		
-		dname.sendKeys(deptname);
+		driver.findElement(dname).sendKeys(deptname);
 	}
 	
 	public void departmentBudget(String budget) {
 		
-		dbudget.sendKeys(budget);
+		driver.findElement(dbudget).sendKeys(budget);
 	}
 	
-	/* 
-	 * public void departmentCurrency(String bcurrency) {
+	 
+	  public void departmentCurrency(String bcurrency) {
+	 
+		  WebElement currency = driver.findElement(deptcurrency);
+			currency.click();
+			Actions cact = new Actions(driver);
+			cact.sendKeys(currency, bcurrency);
+			cact.sendKeys(Keys.ENTER);
+			cact.perform();
 		
-		dcurrency.click();
-		//driver.findElement(By.xpath("//span[@class='ant-select-selection-item']")).click();
-		List<WebElement> currency = driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder-inner']")).findElements(By.tagName("div"));
-		for (WebElement curr : currency) {
-			String a = curr.getText();
-			if (a.equalsIgnoreCase(bcurrency)) {
-				curr.click();
-				break;
-			}
-		}
-	} */
+	
+	} 
 	
 	public void firstOwnerMail(String fmail) {
 		
-		fowner.sendKeys(fmail);	
+		driver.findElement(fowner).sendKeys(fmail);
 	}
 	
 	public void firstOwnerName(String firstname) {
 		
-		fname.sendKeys(firstname);
+		driver.findElement(fname).sendKeys(firstname);
 	}
 	
 	public void deptSubmit() {
 		
-		sbutton.click();
+		driver.findElement(dsubmit).click();
 	}
 	
 }

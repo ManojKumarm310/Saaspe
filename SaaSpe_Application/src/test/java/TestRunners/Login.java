@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "D:\\Selenium\\SaaSpe_Application\\src\\test\\java\\FeatureFiles\\Department.feature", 
+@CucumberOptions(features = "D:\\Selenium\\SaaSpe_Application\\src\\test\\java\\FeatureFiles\\SignUp.feature", 
 glue = "stepDefenitions", dryRun = true)
 public class Login {
 
