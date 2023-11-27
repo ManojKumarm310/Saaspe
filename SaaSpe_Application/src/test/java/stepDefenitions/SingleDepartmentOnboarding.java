@@ -1,12 +1,21 @@
 package stepDefenitions;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
+import POM.Invoice;
 import POM.LoginPage;
 import POM.SingleDepartment;
 import io.cucumber.java.en.And;
@@ -20,6 +29,7 @@ public class SingleDepartmentOnboarding  {
 	public WebDriver driver; 
 	LoginPage lp;
 	SingleDepartment sd;
+	Invoice in; 
 	
 //	LoginPage lp = new LoginPage(driver);
 	
@@ -84,6 +94,14 @@ public class SingleDepartmentOnboarding  {
 	    
 	}
 	
+/*	@Then("Click on the invoice button")
+	public void Click_on_the_invoice_button() {
+		
+		inv = new Invoice(driver);
+		inv.invoiceButton1().click();
+	
+	} */
+	
 	@Then("Click on the Department from the menu")
 	public void click_on_the_department_from_the_menu() throws InterruptedException {
 	    
@@ -146,4 +164,111 @@ public class SingleDepartmentOnboarding  {
 		sd.deptSubmit();
 	}
 
+// -----------------------------------------------------------------------------------------------------------------------//
+// Invoice Onboarding
+	
+		@Then("Click on the invoice button")
+	public void Click_on_the_invoice_button() {
+		
+		in = new Invoice(driver);
+		in.invoiceButton().click();
+	
+	} 
+	
+	@Then("Click on the invoice add button")
+	public void click_on_the_invoice_add_button() {
+	    
+		in = new Invoice(driver);
+		in.invoiceAdd();
+	}
+	
+	@Then("Enter the invoice number {string}")
+	public void enter_the_invoice_number(String ino) {
+	   
+		in = new Invoice(driver);
+		in.invoiceNumber(ino);
+	}
+	
+	@Then("Select the subscription id {string}")
+	public void select_the_subscription_id(String subsid) {
+	    
+	/*	in = new Invoice(driver);
+		in.subId(subsid); */
+		
+		WebElement id = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
+		id.click();
+		Actions aid = new Actions(driver);
+		aid.sendKeys(id, "Id7249");
+		aid.sendKeys(Keys.ENTER);
+		aid.perform();
+	}
+	
+	@Then("Select the invoice currency {string}")
+	public void select_the_invoice_currency(String ic) {
+	    
+		in = new Invoice(driver);
+		in.invoiceCurrency(ic);
+		
+	}
+	
+	@Then("Enter the invoice amount {string}")
+	public void enter_the_invoice_amount(String ia) {
+	    
+		in = new Invoice(driver);
+		in.invoiceAmount(ia);
+	}
+	
+	@Then("Select the start date {string}")
+	public void select_the_start_date(String start) {
+	    
+		in = new Invoice(driver);
+		in.startDate(start);
+	}
+	
+	@Then("Select the end date {string}")
+	public void select_the_end_date(String end) {
+	    
+		in = new Invoice(driver);
+		in.endDate(end);
+	}
+	
+	@Then("Select the due date {string}")
+	public void select_the_due_date(String due) {
+	    
+		in = new Invoice(driver);
+		in.dueDate(due);
+	}
+	
+	@Then("Upload the invoice document")
+	public void upload_the_invoice_document() throws AWTException {
+	    
+		/* in = new Invoice(driver);
+		in.uploadInvoice(); */
+		
+driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
+		
+Robot robot = new Robot();
+
+// Set the clipboard with the file path
+StringSelection selection = new StringSelection("C:\\Users\\Mindgraph-MG\\Desktop\\Sample Construction Contract.pdf");
+Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+// Simulate Ctrl+V (paste) to paste the file path into the dialog
+robot.keyPress(KeyEvent.VK_CONTROL);
+robot.keyPress(KeyEvent.VK_V);
+robot.keyRelease(KeyEvent.VK_V);
+robot.keyRelease(KeyEvent.VK_CONTROL);
+
+// Simulate Enter to confirm the file upload
+robot.keyPress(KeyEvent.VK_ENTER);
+robot.keyRelease(KeyEvent.VK_ENTER);
+
+	}
+	
+	@Then("Click on the invoice submit button")
+	public void click_on_the_invoice_submit_button() throws InterruptedException {
+	    
+		in = new Invoice(driver);
+		in.clickSubmit();
+	} 
 }

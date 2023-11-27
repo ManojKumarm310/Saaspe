@@ -21,7 +21,7 @@ public static  String url = "https://dev-app.saaspe.com/auth/login";
 	@BeforeTest
 	public static void launchapp () {
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\MySeleniumProject\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -30,11 +30,11 @@ public static  String url = "https://dev-app.saaspe.com/auth/login";
 		driver.get(url);
 		
 	}
-	@AfterTest
+/*	@AfterTest
 	public static  void closeapp() {
 		
 		driver.close();
 		
-	}
+	} */
 
 }

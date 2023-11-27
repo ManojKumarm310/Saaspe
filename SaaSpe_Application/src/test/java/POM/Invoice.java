@@ -13,12 +13,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class Invoice {
-
 	
 	WebDriver driver;
+
+	public Invoice(WebDriver driver) {
+		
+		this.driver = driver;
+	}
+	
+	
 	
 	// Invoice button
-	private By invoice = By.xpath("//span[text()='Invoices']");
+	private By invoice1 = By.xpath("//span[text()='Invoices']");
 	
 	// Add button
 	private By addbutton = By.xpath("(//button[@type='button'])[2]");
@@ -27,7 +33,7 @@ public class Invoice {
 	private By inumber = By.name("invoiceNumber");
 	
 	// Subscription Id
-	private By subid = By.xpath("(//span[@class='ant-select-selection-item'])[1]");
+	public By subid = By.xpath("(//span[@class='ant-select-selection-item'])[1]");
 	
 	// Invoice Currency
 	private By icurrency = By.xpath("(//span[@class='ant-select-selection-item'])[2]");
@@ -52,9 +58,9 @@ public class Invoice {
 	
 	// Methods for the Invoice
 	
-	public void invoiceButton() {
+	public WebElement invoiceButton() {
 		
-		driver.findElement(invoice).click();
+		return  driver.findElement(invoice1);
 	}
 	
 	public void invoiceAdd() {
@@ -123,7 +129,7 @@ public class Invoice {
 	}
 	
 	
-	public void uploadInvoice() throws AWTException {
+/*	public void uploadInvoice() throws AWTException {
 		
 		driver.findElement(ui).click();
 		
@@ -143,7 +149,7 @@ public class Invoice {
 	    robot.keyPress(KeyEvent.VK_ENTER);
 	    robot.keyRelease(KeyEvent.VK_ENTER);
 	    
-	}
+	} */
 	
 	
 	public void clickSubmit() throws InterruptedException {

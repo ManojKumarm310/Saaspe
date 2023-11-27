@@ -53,12 +53,15 @@ public class Invoi {
 		driver.findElement(By.name("invoiceNumber")).sendKeys("IV-61805");
 		
 		// Subscription Id
-		WebElement id = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
-		id.click();
-		Actions aid = new Actions(driver);
-		aid.sendKeys(id, "Id7249");
-		aid.sendKeys(Keys.ENTER);
-		aid.perform();
+		WebElement sid = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
+		sid.click();
+		driver.findElement(By.xpath("//div[contains(text(),'id3180')]")).click();
+		
+		
+		/*Actions suact = new Actions(driver);
+		suact.sendKeys(sid, "id3180");
+		suact.sendKeys(Keys.ENTER);
+		suact.perform(); */
 		
 		// Invoice Currency
 		WebElement icur = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[2]"));
