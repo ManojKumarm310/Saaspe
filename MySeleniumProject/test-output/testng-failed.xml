@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="reusableMethodsLibrary.Invoice">
+      <class name="reusableMethodsLibrary.ClmContractOnb">
         <methods>
-          <include name="invoiceTest"/>
+          <include name="contractOnboarding"/>
           <include name="launchapp"/>
         </methods>
-      </class> <!-- reusableMethodsLibrary.Invoice -->
+      </class> <!-- reusableMethodsLibrary.ClmContractOnb -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
