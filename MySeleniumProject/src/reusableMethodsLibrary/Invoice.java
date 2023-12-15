@@ -35,7 +35,7 @@ public class Invoice extends appUtils {
 		loa.otpSubmitButton();
 		ip.invoiceButton();
 		ip.invoiceAdd();
-		ip.invoiceNumber("6197");
+		ip.invoiceNumber("617");
 		ip.subId();
 		
 		

@@ -20,6 +20,13 @@ public class SingleUser extends appUtils {
 	driver.findElement(By.name("emailAddress")).sendKeys(username);
 	driver.findElement(By.name("password")).sendKeys(password);
 	driver.findElement(By.xpath("//button[@type='submit']")).click();
+	driver.findElement(By.xpath("(//input[@name='authenticationcode'])[1]")).sendKeys("3");
+	driver.findElement(By.xpath("//input[2]")).sendKeys("3");
+	driver.findElement(By.xpath("//input[3]")).sendKeys("3");
+	driver.findElement(By.xpath("//input[4]")).sendKeys("3");
+	driver.findElement(By.xpath("//input[5]")).sendKeys("3");
+	driver.findElement(By.xpath("//input[6]")).sendKeys("3");
+	driver.findElement(By.xpath("//button[@type='submit']")).click();
 	Thread.sleep(9000);
 	driver.findElement(By.xpath("//span[text()='Users']")).click();
 	Thread.sleep(3000);

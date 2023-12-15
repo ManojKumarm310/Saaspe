@@ -51,6 +51,13 @@ public class Application {
 	public void i_click_on_the_login_button_in_the_page() {
 	   
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("(//input[@name='authenticationcode'])[1]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[2]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[3]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[4]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[5]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[6]")).sendKeys("3");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	}
 	
 	@Then("I select the application option from the menu")
