@@ -45,7 +45,7 @@ public class PurchasedApplication {
 		// Application
 		WebElement app = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
 		app.click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		Actions a = new Actions(driver);
 		a.sendKeys(app, "Freshbooks");
 		a.sendKeys(Keys.ENTER);
@@ -69,7 +69,7 @@ public class PurchasedApplication {
 		// Owner mail address
 		WebElement om = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[3]"));
 		om.click();
-		Thread.sleep(6000);
+		Thread.sleep(9000);
 		Actions oa = new Actions(driver);
 		oa.sendKeys(om, "lumasofy@lyft.live");
 		oa.sendKeys(Keys.ENTER);

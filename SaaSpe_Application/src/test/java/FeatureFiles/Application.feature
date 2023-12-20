@@ -64,4 +64,4 @@ Feature: Application
 
     Examples: 
     |App type|Application|Provider|category|Primary Owner|Project Name|currency|Product Name|Product type|Unit Price|Quantity|
-     |New|Jira|Atlasian|Project Management|becejyjy@clout.wiki|Trailblazer Techniques|MYR|Standard|License|75|10|
+     |New|GitHub|Atlasian|Project Management|becejyjy@clout.wiki|Trailblazer Techniques|MYR|Standard|License|75|10|

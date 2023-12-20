@@ -35,12 +35,12 @@ public class Invoice extends appUtils {
 		loa.otpSubmitButton();
 		ip.invoiceButton();
 		ip.invoiceAdd();
-		ip.invoiceNumber("617");
+		ip.invoiceNumber("8052");
 		ip.subId();
 		
 		
-		ip.invoiceCurrency("MYR");
-		ip.invoiceAmount("11000");
+		ip.invoiceCurrency("USD");
+		ip.invoiceAmount("13000");
 		ip.startDate("02/11/2022");
 		ip.endDate("01/11/2023");
 		ip.dueDate("01/11/2023");

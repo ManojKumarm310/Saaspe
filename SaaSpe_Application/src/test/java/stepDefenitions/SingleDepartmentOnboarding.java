@@ -16,6 +16,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 import POM.Invoice;
+import POM.Lastlogin;
 import POM.LoginPage;
 import POM.SingleDepartment;
 import io.cucumber.java.en.And;
@@ -30,6 +31,7 @@ public class SingleDepartmentOnboarding  {
 	LoginPage lp;
 	SingleDepartment sd;
 	Invoice in; 
+	Lastlogin ll;
 	
 //	LoginPage lp = new LoginPage(driver);
 	
@@ -190,13 +192,14 @@ public class SingleDepartmentOnboarding  {
 	}
 	
 	@Then("Select the subscription id {string}")
-	public void select_the_subscription_id(String subsid) {
+	public void select_the_subscription_id(String subsid) throws InterruptedException {
 	    
 	/*	in = new Invoice(driver);
 		in.subId(subsid); */
 		
 		WebElement id = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
 		id.click();
+		Thread.sleep(3000);
 		Actions aid = new Actions(driver);
 		aid.sendKeys(id, "Id7249");
 		aid.sendKeys(Keys.ENTER);
@@ -246,21 +249,29 @@ public class SingleDepartmentOnboarding  {
 		in.uploadInvoice(); */
 		
 driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
-		
-Robot robot = new Robot();
 
-// Set the clipboard with the file path
-StringSelection selection = new StringSelection("C:\\Users\\Mindgraph-MG\\Desktop\\Sample Construction Contract.pdf");
+Robot robot = new Robot();		
+StringSelection selection = new StringSelection("C:\\IN-1452563.pdf");
 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+// Delay to ensure the file upload dialog is in focus
+robot.delay(1000);
 
 // Simulate Ctrl+V (paste) to paste the file path into the dialog
 robot.keyPress(KeyEvent.VK_CONTROL);
+robot.delay(500);  // Adjust the delay as needed
 robot.keyPress(KeyEvent.VK_V);
+robot.delay(500);  // Adjust the delay as needed
 robot.keyRelease(KeyEvent.VK_V);
+robot.delay(500);  // Adjust the delay as needed
 robot.keyRelease(KeyEvent.VK_CONTROL);
+
+// Delay before simulating Enter to confirm the file upload
+robot.delay(500);  // Adjust the delay as needed
 
 // Simulate Enter to confirm the file upload
 robot.keyPress(KeyEvent.VK_ENTER);
+robot.delay(500);  // Adjust the delay as needed
 robot.keyRelease(KeyEvent.VK_ENTER);
 
 	}
@@ -271,4 +282,56 @@ robot.keyRelease(KeyEvent.VK_ENTER);
 		in = new Invoice(driver);
 		in.clickSubmit();
 	} 
+
+//---------------------------------------------------------------------------------------------------
+// Workflow
+
+@Then("Click on the workflow button")
+public void click_on_the_workflow_button() {
+   
+	ll = new Lastlogin(driver);
+	ll.workflow();
 }
+
+@Then("Click on the create workfow button")
+public void click_on_the_create_workfow_button() {
+    
+	ll = new Lastlogin(driver);
+	ll.wButton();
+}
+
+@Then("Select the application")
+public void select_the_application() throws InterruptedException {
+   
+	ll = new Lastlogin(driver);
+	ll.selectApplication();
+}
+
+@Then("Select the date range")
+public void select_the_date_range() {
+    
+	ll = new Lastlogin(driver);
+	ll.dateRange();
+}
+
+@Then("Enter the Subject {string}")
+public void enter_the_subject(String str) {
+    
+	ll = new Lastlogin(driver);
+	ll.enterSubject(str);
+}
+
+@Then("Enter the Message {string}")
+public void enter_the_message(String mess) {
+    
+	ll = new Lastlogin(driver);
+	ll.enterMessage(mess);
+}
+
+@Then("Click on the workflow submit button")
+public void click_on_the_workflow_submit_button() {
+	
+	ll = new Lastlogin(driver);
+	ll.clickSubmit();
+    
+}}

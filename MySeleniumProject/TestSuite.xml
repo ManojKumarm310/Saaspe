@@ -3,7 +3,7 @@
 		<parameter name="url" value="https://dev-app.saaspe.com/auth/login"></parameter>
 		<parameter name="uname" value="rishi.p@mind-graph.com"></parameter>
 		<parameter name="pwd" value="P@ssword-1"></parameter>
-		<parameter name="deptname" value="Data Base"></parameter>
+		<parameter name="deptname" value="DataBase"></parameter>
 		<parameter name="budget" value="11000"> </parameter>
 		<parameter name="bcurrency" value="USD"></parameter>
 		<parameter name="fownermail" value="jehara@pelagius.net"></parameter>
@@ -21,11 +21,11 @@
 		<parameter name="url" value="https://dev-app.saaspe.com/auth/login"></parameter>
 		<parameter name="uname" value="rishi.p@mind-graph.com"></parameter>
 		<parameter name="pwd" value="P@ssword-1"></parameter>
-		<parameter name="fname" value="Neptuno"></parameter>
-		<parameter name="lname" value="Raghul"></parameter>
-		<parameter name="mail" value="tipabi2014@newcupon.com"></parameter>
+		<parameter name="fname" value="Sten"></parameter>
+		<parameter name="lname" value="Feivush"></parameter>
+		<parameter name="mail" value="havamoci@imagepoet.net"></parameter>
 		<parameter name="rmanager" value="Saylor"></parameter>
-		<parameter name="dept" value="IT"></parameter>
+		<parameter name="dept" value="HR"></parameter>
 		<parameter name="jdate" value="02/03/2023"></parameter>
 		<parameter name="etype" value="Permanent"></parameter>
 		<parameter name="role" value="Team Lead"></parameter>
@@ -38,9 +38,9 @@
 	</test>	
 	
 	<test name = "SignUp">
-		<parameter name = "firname" value = "Onyeka"></parameter>
-		<parameter name = "lasname" value = "Dashawn"></parameter>
-		<parameter name = "mailid" value = "sacoco9480@mcenb.com"></parameter>
+		<parameter name = "firname" value = "Olga"></parameter>
+		<parameter name = "lasname" value = "Serapis"></parameter>
+		<parameter name = "mailid" value = "xonod69663@bayxs.com"></parameter>
 		<parameter name = "phoneno" value = "8835519047"></parameter>
 		<parameter name = "role" value = "Manager"></parameter>
 		<parameter name = "pwd" value = "P@ssword-1"></parameter>

@@ -1,3 +1,4 @@
+@smoke
 Feature: OrangeHRM Login Page.
   To test the login page of the OrageHRM application
 
