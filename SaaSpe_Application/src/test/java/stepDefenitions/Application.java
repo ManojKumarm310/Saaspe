@@ -94,7 +94,7 @@ public class Application {
 	@Then("I will select the application {string}")
 	public void i_will_select_the_application(String Application) {
 	    
-		WebElement name = driver.findElement(By.xpath("//span[@class='ant-select-selection-item']"));
+		WebElement name = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
 		name.click();
 		Actions nact = new Actions(driver);
 		nact.sendKeys(name,Application);
@@ -139,8 +139,9 @@ public class Application {
 	}
 	
 	@Then("I will select the project {string}")
-	public void i_will_select_the_project(String ProjectName) {
+	public void i_will_select_the_project(String ProjectName) throws InterruptedException {
 	    
+		Thread.sleep(3000);
 		WebElement project = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[4]"));
 		project.click();
 		Actions pact = new Actions(driver);
