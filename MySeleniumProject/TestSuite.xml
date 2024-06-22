@@ -1,36 +1,37 @@
 <suite name = "Test Suite">
+	
 	<test name="Saaspe-Department">
 		<parameter name="url" value="https://dev-app.saaspe.com/auth/login"></parameter>
 		<parameter name="uname" value="rishi.p@mind-graph.com"></parameter>
 		<parameter name="pwd" value="P@ssword-1"></parameter>
-		<parameter name="deptname" value="DataBase"></parameter>
-		<parameter name="budget" value="11000"> </parameter>
-		<parameter name="bcurrency" value="USD"></parameter>
-		<parameter name="fownermail" value="jehara@pelagius.net"></parameter>
-		<parameter name="fownername" value="John"></parameter>
+		<parameter name="deptname" value="Business Intell"></parameter>
+		<parameter name="budget" value="12650.5"> </parameter>
+		<parameter name="bcurrency" value="SGD"></parameter>
+		<parameter name="fownermail" value="pehev1458@molyg.com"></parameter>
+		<parameter name="fownername" value="Felipe Pankaja"></parameter>
 		
 		<classes>
 			<class name="saaspeTestCase.SingleDepartmentOnboarding">
 				
 			</class>
 		</classes>
-		</test>
+		</test> 
 		
-		
+ 		
 	<test name="Single User Onboarding">
 		<parameter name="url" value="https://dev-app.saaspe.com/auth/login"></parameter>
 		<parameter name="uname" value="rishi.p@mind-graph.com"></parameter>
 		<parameter name="pwd" value="P@ssword-1"></parameter>
-		<parameter name="fname" value="Sten"></parameter>
-		<parameter name="lname" value="Feivush"></parameter>
-		<parameter name="mail" value="havamoci@imagepoet.net"></parameter>
-		<parameter name="rmanager" value="Saylor"></parameter>
-		<parameter name="dept" value="HR"></parameter>
-		<parameter name="jdate" value="02/03/2023"></parameter>
+		<parameter name="fname" value="Mariya"></parameter>
+		<parameter name="lname" value="Silvius"></parameter>
+		<parameter name="mail" value="tubysy@imagepoet.net"></parameter>
+		<parameter name="rmanager" value="Aishah"></parameter>
+		<parameter name="dept" value="Devops"></parameter>
+		<parameter name="jdate" value="17/09/2023"></parameter>
 		<parameter name="etype" value="Permanent"></parameter>
 		<parameter name="role" value="Team Lead"></parameter>
 		<parameter name="se" value="Male"></parameter>
-		<parameter name="pno" value="9600412438"></parameter>
+		<parameter name="pno" value="7597142638"></parameter>
 	
 	<classes>
 		<class name="saaspeTestCase.SingleUserOnboarding"></class>
@@ -38,14 +39,88 @@
 	</test>	
 	
 	<test name = "SignUp">
-		<parameter name = "firname" value = "Olga"></parameter>
-		<parameter name = "lasname" value = "Serapis"></parameter>
-		<parameter name = "mailid" value = "xonod69663@bayxs.com"></parameter>
-		<parameter name = "phoneno" value = "8835519047"></parameter>
+		<parameter name = "firname" value = "Iachin"></parameter>
+		<parameter name = "lasname" value = "Abdul"></parameter>
+		<parameter name = "mailid" value = "tukkiyuydu@gufum.com"></parameter>
+		<parameter name = "phoneno" value = "9628459137"></parameter>
 		<parameter name = "role" value = "Manager"></parameter>
 		<parameter name = "pwd" value = "P@ssword-1"></parameter>
 		<classes>
 			<class name = "saaspeTestCase.UserSignUp"></class>
 		</classes>
+	</test> 
+<!-- 	
+	<test name = "User Last login">
+		<classes>
+			<class name = "reusableMethodsLibrary.WorkflowUser">
+			</class>
+		</classes>
+		
 	</test>
+	
+	<test name = "Login">
+		<classes>
+			<class name = "reusableMethodsLibrary.Login">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "Project">
+		<classes>
+			<class name = "reusableMethodsLibrary.ProjectOnboarding">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "User role creation">
+		<classes>
+			<class name = "reusableMethodsLibrary.UserCreation">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "Currency Conversion">
+		<classes>
+			<class name = "reusableMethodsLibrary.CurrencyConversion">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "Invoice">
+		<classes>
+			<class name = "reusableMethodsLibrary.Invoice">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "New application onboarding">
+		<classes>
+			<class name = "reusableMethodsLibrary.NewApplicationOnboarding">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "Budget Creation">
+		<classes>
+			<class name = "reusableMethodsLibrary.BudgetCreation">
+			</class>
+		</classes>
+		
+	</test>
+	
+	<test name = "Change Password">
+		<classes>
+			<class name = "reusableMethodsLibrary.ChangePassword">
+			</class>
+		</classes>
+		
+	</test>
+	
+	-->
 </suite>

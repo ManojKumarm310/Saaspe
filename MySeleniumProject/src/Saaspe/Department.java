@@ -23,7 +23,7 @@ public class Department {
 		driver.get("https://dev-app.saaspe.com/auth/login");
 		
 		
-		driver.findElement(By.name("emailAddress")).sendKeys("rishi.p@mind-graph.com");
+		driver.findElement(By.name("emailAddress")).sendKeys("xyzycuse@socam.me");
 		driver.findElement(By.name("password")).sendKeys("P@ssword-1");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		//Thread.sleep(9000);
@@ -40,7 +40,7 @@ public class Department {
 		driver.findElement(By.xpath("//span[text()='Departments']")).click();
 		driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
 		driver.findElement(By.xpath("//input[@class='ant-radio-input']")).click();
-		driver.findElement(By.name("departmentName")).sendKeys("VLSI");
+		driver.findElement(By.name("departmentName")).sendKeys("UI UX");
 		driver.findElement(By.name("budget")).sendKeys("12500");
 		/*driver.findElement(By.xpath("//span[@class='ant-select-selection-item']")).click();
 		List<WebElement> currency = driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder-inner']")).findElements(By.tagName("div"));
@@ -59,12 +59,22 @@ public class Department {
 		cact.sendKeys(Keys.ENTER);
 		cact.perform();
 		
-		driver.findElement(By.name("ownerEmailAddress")).sendKeys("fekiby@lyft.live");
+		driver.findElement(By.name("ownerEmailAddress")).sendKeys("caveya1913@beeplush.com");
 		driver.findElement(By.name("ownerName")).sendKeys("Swaroop");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
+		//String result ="Your onboarding request is submitted successfully. To view the status of your request, use the  ";
 		
-		
+		WebElement success = driver.findElement(By.xpath("//div[@class='ant-result ant-result-success']"));
+		if(success.isDisplayed()) {
+		try {
+			//if(success.isDisplayed()) {
+				System.out.println("Department Onboarding is successful");
+			
+		} catch (Exception e) {
+			System.out.println("Department Onboarding is failed");
+		}
+	}
 		
 		
 		

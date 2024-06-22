@@ -109,6 +109,14 @@ public class SingleUser extends appUtils {
 	        
 	        driver.findElement(By.xpath("//button[@type='submit']")).click();
 	        
+	        WebElement result = driver.findElement(By.xpath("//div[@class='ant-result-icon']"));
+	        
+	        if(result.isDisplayed()) {
+	        	System.out.println("User onboarding is successful");
+	        }else {
+	        	System.out.println("User onboarding is failed");
+	        }
+	        
 	
 	
 	

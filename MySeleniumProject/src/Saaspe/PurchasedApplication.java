@@ -69,12 +69,12 @@ public class PurchasedApplication {
 		// Owner mail address
 		WebElement om = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[3]"));
 		om.click();
-		Thread.sleep(9000);
+		Thread.sleep(10000);
 		Actions oa = new Actions(driver);
 		oa.sendKeys(om, "lumasofy@lyft.live");
 		oa.sendKeys(Keys.ENTER);
-		oa.perform(); 
-		// driver.findElement(By.xpath("//div[text()='lumasofy@lyft.live']")).click();
+		oa.perform();  
+		
 		
 		// Provider name
 		driver.findElement(By.name("application.providerName")).sendKeys("Freshbooks");

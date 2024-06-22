@@ -15,7 +15,8 @@ public class Lastlogin {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		
+		  long startTime = System.currentTimeMillis();
+		  
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -58,7 +59,7 @@ public class Lastlogin {
 		driver.findElement(By.xpath("//input[@value='91']")).click(); 
 		
 		//Subject field
-		driver.findElement(By.name("subject")).sendKeys("User last login");
+		driver.findElement(By.name("subject")).sendKeys("");
 		
 		// Message field
 		driver.findElement(By.name("message")).sendKeys("User last login");
@@ -74,6 +75,16 @@ public class Lastlogin {
 			System.out.println("Submit button is disabled");
 		} 
 		
+		WebElement success = driver.findElement(By.xpath("//h3[@class='ant-typography']"));
+		if (success.isDisplayed()) {
+			System.out.println("Test Case is Passed");
+		}
+		
+		 long endTime = System.currentTimeMillis();
+		 long duration = endTime - startTime;
+
+	        // Print the duration
+	        System.out.println("Time taken by the script: " + duration + " milliseconds");
 		
 	}
 

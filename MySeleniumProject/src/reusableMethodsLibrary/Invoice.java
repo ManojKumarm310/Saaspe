@@ -28,22 +28,22 @@ public class Invoice extends appUtils {
 		ip = new InvoicePage(driver);
 		
 		
-		loa.username("disit59329@unbiex.com");
+		loa.username("disit59329@unbiex.com"); // disit59329@unbiex.com  // neliariane@yopmail.com
 		loa.password("P@ssword-1");
 		loa.clickLogin();
 		loa.otp();
 		loa.otpSubmitButton();
 		ip.invoiceButton();
 		ip.invoiceAdd();
-		ip.invoiceNumber("8052");
+		ip.invoiceNumber("783221");
 		ip.subId();
 		
 		
-		ip.invoiceCurrency("USD");
-		ip.invoiceAmount("13000");
-		ip.startDate("02/11/2022");
-		ip.endDate("01/11/2023");
-		ip.dueDate("01/11/2023");
+		ip.invoiceCurrency("EUR");
+		ip.invoiceAmount("8631.50");
+		ip.startDate("15/10/2022");
+		ip.endDate("14/10/2023");
+		ip.dueDate("14/10/2023");
 		ip.uploadInvoice();
 		ip.clickSubmit();
 	}

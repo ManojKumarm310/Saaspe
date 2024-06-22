@@ -19,7 +19,7 @@ public class SignUpPage {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://dev-app.saaspe.com/auth/login");
 		driver.findElement(By.linkText("Sign Up")).click();
-		driver.findElement(By.name("firstName")).sendKeys("Mohan");
+		driver.findElement(By.name("firstName")).sendKeys("Mani");
 		driver.findElement(By.name("lastName")).sendKeys("Kishore");
 		driver.findElement(By.name("emailAddress")).sendKeys("mohan@gmail.com");
 		driver.findElement(By.name("userMobileNumber")).sendKeys("9533178302");
@@ -37,8 +37,19 @@ public class SignUpPage {
 		}
 		driver.findElement(By.name("password")).sendKeys("P@ssword-1");
 		driver.findElement(By.name("accept")).click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(2000);
+		WebElement spop = driver.findElement(By.xpath("//span[@class='ant-typography']"));
+		if (spop.isDisplayed()) {
+			
+			System.out.println("Sign up is passed");
+		} else {
+			
+			System.out.println("Sign up is failed");
+		}
+		
+		
 
 	}
 

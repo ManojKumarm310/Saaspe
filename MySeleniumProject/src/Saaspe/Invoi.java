@@ -125,6 +125,13 @@ public class Invoi {
 	    Thread.sleep(6000);
 	    driver.findElement(By.xpath("//button[@type='submit']")).click();
 	    
+	    // Validation of the invoice test
+	    WebElement search = driver.findElement(By.xpath("//input[@placeholder='Search']"));
+	    if (search.isDisplayed()) {
+			System.out.println("Invoice test is passed");
+		} else {
+			System.out.println("Invoice test is failed");
+		}
 	 
 		//driver.close();  
 		

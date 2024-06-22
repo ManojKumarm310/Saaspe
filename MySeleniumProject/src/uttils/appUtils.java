@@ -6,8 +6,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -19,9 +21,10 @@ public static  String url = "https://dev-app.saaspe.com/auth/login";
 
 	
 	@BeforeTest
+	//@BeforeMethod
 	public static void launchapp () {
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\chromedriver.exe");
+	//	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();

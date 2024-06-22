@@ -28,7 +28,7 @@ public class Role {
 			driver.findElement(By.name("password")).sendKeys("P@ssword-1");
 			driver.findElement(By.cssSelector(".ant-btn")).click();
 			//Verify the OTP
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//input[1]")).click();
 			driver.findElement(By.xpath("//input[1]")).sendKeys("7") ;
 			driver.findElement(By.xpath("//input[2]")).sendKeys("6") ;
@@ -50,7 +50,7 @@ public class Role {
 			//Create User 
 			driver.findElement(By.name("firstName")).sendKeys("Poppy");
 			driver.findElement(By.name("lastName")).sendKeys("Amelia");
-			driver.findElement(By.name("userEmail")).sendKeys("bagoxow304@dpsols.com");
+			driver.findElement(By.name("userEmail")).sendKeys("lyqojyla@imagepoet.net");
 			WebElement dd= driver.findElement(By.xpath("//span[@class='ant-select-selection-item']"));
 			dd.click();
 			Thread.sleep(2000);
@@ -63,6 +63,14 @@ public class Role {
 			}
 			
 			driver.findElement(By.xpath("//span[normalize-space()='Submit']")).click();
+			
+			// Validation of the created user
+			WebElement search = driver.findElement(By.xpath("//input[@placeholder='Search']"));
+			if (search.isDisplayed()) {
+				System.out.println("User creation is success");
+			} else {
+				System.out.println("User creation is fail");
+			}
 
 	}
 

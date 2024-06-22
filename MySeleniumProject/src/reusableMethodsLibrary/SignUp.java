@@ -36,6 +36,14 @@ public class SignUp extends appUtils {
 		driver.findElement(By.name("accept")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		WebElement spop = driver.findElement(By.xpath("//span[@class='ant-typography']"));
+		if (spop.isDisplayed()) {
+			
+			System.out.println("Sign up is passed");
+		} else {
+			
+			System.out.println("Sign up is failed");
+		}
 		
 		
 	}

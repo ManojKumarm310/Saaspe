@@ -153,8 +153,7 @@ public class Application {
 	    WebElement pdfElement = driver.findElement(By.xpath("//span[contains(text(), 'PDF')]"));
 	    pdfElement.click(); 
 	    
-	   /* WebDriverWait w = new WebDriverWait(driver, 30);
-	    w.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='ant-modal-body']")))); */
+	   
 	    
 	    Robot robot = new Robot();
 
@@ -179,7 +178,14 @@ public class Application {
 	    driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
 	    driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
 	    driver.findElement(By.xpath("(//button[@type='button'])[3]")).click(); 
-	
+	    
+	    WebElement sp = driver.findElement(By.xpath("//div[@class='ant-result-icon']"));
+	    if (sp.isDisplayed()) {
+			
+	    	System.out.println("New application onboard is successful");
+		} else {
+			System.out.println("New application onboard is failed");
+		}
 
 
 

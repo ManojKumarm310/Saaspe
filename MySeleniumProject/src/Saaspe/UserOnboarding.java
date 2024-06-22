@@ -16,7 +16,7 @@ public class UserOnboarding {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\MySeleniumProject\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -24,6 +24,13 @@ public class UserOnboarding {
 		driver.get("https://dev-app.saaspe.com/auth/login");
 		driver.findElement(By.name("emailAddress")).sendKeys("rishi.p@mind-graph.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssword-1");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("(//input[@name='authenticationcode'])[1]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[2]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[3]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[4]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[5]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[6]")).sendKeys("3");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(9000);
 		driver.findElement(By.xpath("//span[text()='Users']")).click();
@@ -44,13 +51,21 @@ public class UserOnboarding {
         
         driver.findElement(By.name("userFirstName")).sendKeys("Nedelka");
         driver.findElement(By.name("userLastName")).sendKeys("Kris");
-        driver.findElement(By.name("userEmailAddress")).sendKeys("zufowu@afia.pro");
-        driver.findElement(By.xpath("//span[@class='ant-select-selection-item']")).click();
-        List<WebElement> department = driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder-inner']")).findElements(By.tagName("div"));
+        driver.findElement(By.name("userEmailAddress")).sendKeys("fajizuva@imagepoet.net");
+        WebElement d= driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
+		d.click();
+		Actions dclick = new Actions(driver);
+		dclick.sendKeys(d, "Transport");
+		dclick.sendKeys(Keys.ENTER);
+		dclick.perform();
+      //  driver.findElement(By.xpath("//span[@class='ant-select-selection-item']")).click();
+      /*  List<WebElement> department = driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder-inner']")).findElements(By.tagName("div"));
         for (WebElement selection : department) {
         	  String s = selection.getText();
         	  if (s.equalsIgnoreCase("HR")) {
-        		  selection.click();
+        		  selection.click(); */
+        
+        
         driver.findElement(By.name("userReportingManager")).sendKeys("Richeard");
         driver.findElement(By.name("userMobileNumber")).sendKeys("9500330478");
         // selecting the contract type.
@@ -83,14 +98,20 @@ public class UserOnboarding {
         
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         
+        WebElement result = driver.findElement(By.xpath("//div[@class='ant-result-icon']"));
         
+        if(result.isDisplayed()) {
+        	System.out.println("User onboarding is successful");
+        }else {
+        	System.out.println("User onboarding is failed");
+        }
         
         
         
         
 			}
 			
-		}
+		
         
         
         
@@ -100,4 +121,4 @@ public class UserOnboarding {
         
 	}
 
-}
+

@@ -56,6 +56,16 @@ public class Department extends appUtils {
 		driver.findElement(By.name("ownerEmailAddress")).sendKeys(fownermail);
 		driver.findElement(By.name("ownerName")).sendKeys(fownername);
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		WebElement success = driver.findElement(By.xpath("//div[@class='ant-result ant-result-success']"));
+		if(success.isDisplayed()) {
+		try {
+			//if(success.isDisplayed()) {
+				System.out.println("Department Onboarding is successful");
+			
+		} catch (Exception e) {
+			System.out.println("Department Onboarding is failed");
+		}
+	}
 		
 		
 	}

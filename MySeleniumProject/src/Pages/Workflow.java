@@ -45,7 +45,7 @@ public class Workflow {
 	public void selectApplication() throws InterruptedException {
 		WebElement rd = driver.findElement(application);
 		rd.click();
-		Thread.sleep(9000);
+		Thread.sleep(12000);
 		
 		Actions aa = new Actions(driver);
 		aa.sendKeys(rd, "JIRA (Finance)");	
@@ -75,6 +75,11 @@ public class Workflow {
 		{
 			System.out.println("Submit button is disabled");
 		} 
+		
+		WebElement success = driver.findElement(By.xpath("//div[@class='ant-result-icon']"));
+		if (success.isDisplayed()) {
+			System.out.println("Test Case is Passed");
+		}
 
 	}
 }

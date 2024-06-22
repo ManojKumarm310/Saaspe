@@ -17,7 +17,7 @@ public class Project {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\MySeleniumProject\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -25,6 +25,13 @@ public class Project {
 		driver.get("https://dev-app.saaspe.com/auth/login");
 		driver.findElement(By.name("emailAddress")).sendKeys("rishi.p@mind-graph.com");
 		driver.findElement(By.name("password")).sendKeys("P@ssword-1");
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("(//input[@name='authenticationcode'])[1]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[2]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[3]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[4]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[5]")).sendKeys("3");
+		driver.findElement(By.xpath("//input[6]")).sendKeys("3");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		Thread.sleep(9000);
 		driver.findElement(By.xpath("//span[text()='Departments']")).click();
@@ -74,18 +81,18 @@ public class Project {
 		WebElement pmanager = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
 		pmanager.click();
 		Actions pact = new Actions(driver);
-		pact.sendKeys(pmanager, "cygeqidu@lyft.live");
+		pact.sendKeys(pmanager, "megamo@afia.pro");
 		pact.sendKeys(Keys.ENTER);
 		pact.perform();
 		
 		// Selecting the secondary owner mail address.
 		
-		WebElement smanager = driver.findElement(By.xpath("//span[@title='-- Please Select --']"));
+	/*	WebElement smanager = driver.findElement(By.xpath("//span[@title='-- Please Select --']"));
 		smanager.click();
 		Actions sact = new Actions(driver);
 		sact.sendKeys(smanager, "megamo@afia.pro");
 		sact.sendKeys(Keys.ENTER);
-		sact.perform();
+		sact.perform(); */
 		
 		// Selecting the currency
 		
@@ -129,7 +136,7 @@ public class Project {
 		
 		driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[5]")).click();
 		Thread.sleep(2000);
-		List<WebElement> type =driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder']")).findElements(By.tagName("div"));
+	/*	List<WebElement> type =driver.findElement(By.xpath("//div[@class='rc-virtual-list-holder']")).findElements(By.tagName("div"));
 		
 		for (WebElement atype : type) {
 			 String atext = atype.getText();
@@ -137,7 +144,11 @@ public class Project {
 				atype.click();
 				break;
 			}
-		} 
+		} */
+		
+		driver.findElement(By.xpath("//div[@class='ant-select-item-option-content'][normalize-space()='New']")).click();
+		
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		
 		
 	

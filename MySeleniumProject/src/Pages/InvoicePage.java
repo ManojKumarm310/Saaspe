@@ -77,6 +77,8 @@ public class InvoicePage {
 			WebElement sid = driver.findElement(By.xpath("(//span[@class='ant-select-selection-item'])[1]"));
 			sid.click();
 			driver.findElement(By.xpath("//div[contains(text(),'id3180')]")).click();
+			//driver.findElement(By.xpath("//div[contains(text(),'T941')]")).click();
+			//driver.findElement(By.xpath("//div[contains(text(),'Id903')]")).click();
 		}
 		
 		public void invoiceCurrency(String cu) {
@@ -166,6 +168,12 @@ public class InvoicePage {
 			
 			Thread.sleep(6000);
 		    driver.findElement(sub).click();
+		    WebElement search = driver.findElement(By.xpath("//input[@placeholder='Search']"));
+		    if (search.isDisplayed()) {
+				System.out.println("Invoice test is passed");
+			} else {
+				System.out.println("Invoice test is failed");
+			}
 		}
 		
 }
