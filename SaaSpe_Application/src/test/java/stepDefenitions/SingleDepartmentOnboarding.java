@@ -5,23 +5,37 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
 
+import EcommercePages.RegisterPage;
+import EcommercePages.changePage;
+import EcommercePages.login;
+import POM.ChangePasswordPage;
+import POM.CurrencyConversionPage;
 import POM.Invoice;
 import POM.Lastlogin;
 import POM.LoginPage;
 import POM.SingleDepartment;
+import POM.UserCreationPage;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.plugin.event.Node.Scenario;
 
 public class SingleDepartmentOnboarding  {
 
@@ -32,10 +46,32 @@ public class SingleDepartmentOnboarding  {
 	SingleDepartment sd;
 	Invoice in; 
 	Lastlogin ll;
+	ChangePasswordPage cp;
+	UserCreationPage uc;
+	CurrencyConversionPage cc;
+	RegisterPage rp;
+	login l;
+	changePage c;
 	
 //	LoginPage lp = new LoginPage(driver);
 	
 //	SingleDepartment sd = new SingleDepartment(driver);
+	
+ @AfterStep
+	    public void tearDown(io.cucumber.java.Scenario scenario) throws IOException {
+	        if (scenario.isFailed()) {
+	            // Take a screenshot
+	            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	             
+	             
+	             // File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+	            File des = new File("C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\Screenshot\\result.png");
+	              // FileUtils.copyFile(screenshotFile, new File("C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\Screenshot\\" + scenario.getName() + ".png"));
+	            FileHandler.copy(screenshot, des);
+	        }
+	        } 
+	
+	
 	
 	
 	
@@ -43,7 +79,7 @@ public class SingleDepartmentOnboarding  {
 	@Given("Open the application {string}")
 	public void open_the_application(String url) {
 	   
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\SaaSpe_Application\\chromedriver.exe");
 	    driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
@@ -334,4 +370,299 @@ public void click_on_the_workflow_submit_button() {
 	ll = new Lastlogin(driver);
 	ll.clickSubmit();
     
-}}
+}
+//Change Password-----------------------------------------------------------
+@Then("Click on the user information button")
+public void click_on_the_user_information_button() {
+    
+	cp = new ChangePasswordPage(driver);
+	cp.arrowButton();
+}
+@Then("Click on the change password")
+public void click_on_the_change_password() {
+    
+	cp = new ChangePasswordPage(driver);
+	cp.changePassword();
+}
+@Then("Enter the old password {string}")
+public void enter_the_old_password(String old) {
+    
+	cp = new ChangePasswordPage(driver);
+	cp.oldPassword(old);
+}
+@Then("Enter the new password {string}")
+public void enter_the_new_password(String newp) {
+    
+	cp = new ChangePasswordPage(driver);
+	cp.newPassword(newp);
+}
+@Then("Enter the confirm password {string}")
+public void enter_the_confirm_password(String confirm) {
+   
+	cp = new ChangePasswordPage(driver);
+	cp.confirmPassowrd(confirm);
+}
+@And("Click on the change password button")
+public void click_on_the_change_password_button() {
+	
+	cp = new ChangePasswordPage(driver);
+	cp.passSubmitButton();
+}
+
+// User Creation------------------------------------------------------------------------
+@Then("Click on the Administraction link")
+public void click_on_the_administraction_link() {
+	
+	uc = new UserCreationPage(driver);
+    uc.adminLink();
+}
+
+@Then("Click on the User Management link")
+public void click_on_the_user_management_link() {
+	
+	uc = new UserCreationPage(driver);
+	uc.userManagementLink();
+   
+}
+
+@Then("Click on the Add button")
+public void click_on_the_add_button() {
+	
+	uc = new UserCreationPage(driver);
+	uc.addButton();
+   
+}
+
+@Then("Enter the user first name {string}")
+public void enter_the_user_first_name(String f) {
+	
+	uc = new UserCreationPage(driver);
+	uc.firstName(f);
+}
+
+@Then("Enter the user last name {string}")
+public void enter_the_user_last_name(String lname) {
+	
+	uc = new UserCreationPage(driver);
+    uc.lastName(lname);
+}
+
+@Then("Enter the user Email Address {string}")
+public void enter_the_user_email_address(String um) {
+	
+	uc = new UserCreationPage(driver);
+    uc.userMail(um);
+}
+
+@Then("Select the role")
+public void select_the_role() throws InterruptedException {
+	
+	uc = new UserCreationPage(driver);
+    uc.userRole();
+}
+
+@And("Click on the User Management Submit button")
+public void click_on_the_user_management_submit_button() {
+	
+	uc = new UserCreationPage(driver);
+	uc.clickSubmit();
+    
+}
+
+// Currency Convertor ----------------------------------------------------------------
+
+@Then("Click on the Administration link")
+public void click_on_the_administration_link() {
+	
+	cc = new CurrencyConversionPage(driver);
+    cc.adminLink();
+}
+@Then("Click on the preference link")
+public void click_on_the_preference_link() {
+	
+	cc = new CurrencyConversionPage(driver);
+    cc.preferenceLink();
+}
+@Then("Select the preferred currency {string}")
+public void select_the_preferred_currency(String c) {
+    
+	cc = new CurrencyConversionPage(driver);
+	cc.selectCurrency(c);
+}
+@And("Click on the Save button")
+public void click_on_the_save_button() throws InterruptedException {
+    
+	cc = new CurrencyConversionPage(driver);
+	cc.saveButton();
+}
+
+//---------E-commerce Register Page-----------------
+
+@Given("Open the E-Commerce website with the url {string}")
+public void open_the_e_commerce_website_with_the_url(String url) {
+	
+	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\SaaSpe_Application\\chromedriver.exe");
+    driver = new ChromeDriver();
+	driver.manage().deleteAllCookies();
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	driver.get(url);
+    
+}
+
+@Then("Click on the My Account link")
+public void click_on_the_my_account_link() {
+	
+	rp = new RegisterPage(driver);
+	rp.accountLink();
+    
+}
+
+@Then("Click on the Register Button")
+public void click_on_the_register_button() {
+	
+	rp = new RegisterPage(driver);
+	rp.registerButton();
+    
+}
+
+@Then("Enter the first name as {string}")
+public void enter_the_first_name_as(String first) {
+    
+	rp = new RegisterPage(driver);
+	rp.firstName(first);
+}
+
+@Then("Enter the last name as {string}")
+public void enter_the_last_name_as(String last) {
+	
+	rp = new RegisterPage(driver);
+	rp.lastName(last);
+    
+}
+
+@Then("Enter user email address {string}")
+public void enter_user_email_address(String mail) {
+	
+	rp = new RegisterPage(driver);
+	rp.email(mail);
+    
+}
+
+@Then("Enter the user phone number {string}")
+public void enter_the_user_phone_number(String pno) {
+	
+	rp = new RegisterPage(driver);
+	rp.phoneNo(pno);
+    
+}
+
+@Then("Enter the user password as {string}")
+public void enter_the_user_password_as(String pass) {
+    
+	
+	rp = new RegisterPage(driver);
+	rp.password(pass);
+}
+
+@Then("Enter the confirm password as {string}")
+public void enter_the_confirm_password_as(String cpass) {
+	
+	rp = new RegisterPage(driver);
+	rp.confirmPassword(cpass);
+   
+}
+
+@Then("Click on the Checkbox")
+public void click_on_the_checkbox() {
+	
+	rp = new RegisterPage(driver);
+	rp.checkbox();
+   
+}
+
+@And("click on continue button")
+public void click_on_continue_button() {
+	
+	rp = new RegisterPage(driver);
+	rp.submitButton();
+    
+}
+
+// Changes-----------------------------------------------------------------------
+@Given("url {string}")
+public void url(String string) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+	driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	driver.get("https://stardesk-itsm-ui-dev.myairports.com.my/");
+	Thread.sleep(3000);
+}
+
+@Then("username {string}")
+public void username(String string) {
+	l = new login(driver);
+    l.userName(string);
+}
+@Then("password {string}")
+public void password(String string) {
+	l = new login(driver);
+    l.password(string);
+    l.submitButton();
+}
+@Then("Click on the Changes button in the side menu")
+public void click_on_the_changes_button_in_the_side_menu() {
+	c = new changePage(driver);
+    c.changeButton();
+}
+
+@Then("Click on the Create New button")
+public void click_on_the_create_new_button() {
+	c = new changePage(driver);
+    c.createNew();
+}
+
+@Then("Enter the phone number {string}")
+public void enter_the_phone_number(String string) {
+	c = new changePage(driver);
+    c.phoneNo(string);
+}
+
+@Then("Enter subject {string}")
+public void enter_subject(String string) {
+	c = new changePage(driver);
+    c.subject(string);
+}
+
+@Then("Enter the description {string}")
+public void enter_the_description(String string) {
+   c.description(string);
+}
+
+@Then("Select the impact {string}")
+public void select_the_impact(String string) {
+	c = new changePage(driver);
+    c.impact(string);
+}
+
+@Then("Select the urgency {string}")
+public void select_the_urgency(String string) {
+	c = new changePage(driver);
+   c.urgency(string);
+}
+
+@Then("Select classfication {string}")
+public void select_classfication(String string) {
+	c = new changePage(driver);
+    c.changeClassfication(string);
+}
+
+
+
+
+
+
+
+
+}

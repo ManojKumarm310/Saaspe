@@ -34,8 +34,8 @@ Feature: Application
   @tag2
   Scenario Outline: Single Application Onboarding
   
-   Given Open the application with the url "https://dev-app.saaspe.com/"
-    Then I enter the username as "rishi.p@mind-graph.com"
+   Given Open the application with the url "https://sit-app.saaspe.com"
+    Then I enter the username as "zasawuze@lyft.live"
     Then I enter the password as "P@ssword-1"
     Then I click on the login button in the page
     Then I select the application option from the menu
@@ -58,10 +58,10 @@ Feature: Application
     When I click on the Next button in  document page
     Then In similar application page i click on Next button
     Then I will click on the submit button
-    When I close the browser
+  #  When I close the browser
     
     
 
     Examples: 
     |App type|Application|Provider|category|Primary Owner|Project Name|currency|Product Name|Product type|Unit Price|Quantity|
-     |New|GitHub|Atlasian|Project Management|becejyjy@clout.wiki|Trailblazer Techniques|MYR|Standard|License|75|10|
+     |New|FreshBooks|Freshbooks|cloud|qedusure@imagepoet.net|Ethereal Enterprise|EUR|Standard|License|55|10|
