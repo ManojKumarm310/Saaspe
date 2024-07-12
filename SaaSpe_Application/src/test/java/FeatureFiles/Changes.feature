@@ -18,8 +18,11 @@ Feature: Changes feature in the ITSM
     Then Select the impact "<impact>"
     Then Select the urgency "<urgency>"
     Then Select classfication "<classfication>"
+    Then Select the Risk "<risk>"
+    Then Select the Change Type "<change>"
+    
     
 
     Examples: 
-     |pno|subject|des|impact|urgency|classfication|
-     |54354356457600|Change Requirement|Ok|1. High|2. Medium|Urgent|
+     |pno|subject|des|impact|urgency|classfication|risk|change|
+     |54354356457600|Change Requirement|Ok|1. High|2. Medium|Urgent|2. Major|Maintenance|

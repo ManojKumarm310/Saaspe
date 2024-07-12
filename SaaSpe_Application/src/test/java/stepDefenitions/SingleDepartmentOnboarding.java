@@ -653,9 +653,24 @@ public void select_the_urgency(String string) {
 }
 
 @Then("Select classfication {string}")
-public void select_classfication(String string) {
+public void select_classfication(String string) throws InterruptedException {
 	c = new changePage(driver);
     c.changeClassfication(string);
+}
+
+@Then("Select the Risk {string}")
+public void select_the_risk(String string) {
+	
+	c = new changePage(driver);
+	c.methodRisk(string);
+    
+}
+@Then("Select the Change Type {string}")
+public void select_the_change_type(String string) {
+	
+	c = new changePage(driver);
+	c.methodChange(string);
+    
 }
 
 

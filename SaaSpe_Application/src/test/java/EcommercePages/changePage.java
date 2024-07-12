@@ -47,6 +47,12 @@ public class changePage {
 	@FindBy (xpath = "(//div[@class='MuiFormControl-root css-kmxkrk'])[14]")
 	WebElement classi;
 	
+	@FindBy (xpath = "(//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-1y8gbwp'])[5]")
+	WebElement r;
+	
+	@FindBy(xpath = "(//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-1y8gbwp'])[6]")
+	WebElement c;
+	
 	// Methods
 	
 	public changePage(WebDriver driver) {
@@ -102,8 +108,9 @@ public class changePage {
 		}
 	}
 	
-	public void changeClassfication(String clas) {
+	public void changeClassfication(String clas) throws InterruptedException {
 		classi.click();
+		Thread.sleep(3000);
 		List<WebElement> cha =driver.findElement(By.xpath("//ul[@role='listbox']")).findElements(By.tagName("li"));
 		for(WebElement change : cha) {
 			String text =change.getText();
@@ -112,7 +119,53 @@ public class changePage {
 				break;
 			}
 		}
+		
+		
+		
 	}
+
+	public void methodRisk(String mr) {
+		r.click();
+		List<WebElement> change = driver.findElement(By.xpath("//ul[@role='listbox']")).findElements(By.tagName("li"));
+		for(WebElement ct : change) {
+			String cte = ct.getText();
+			if(cte.equalsIgnoreCase(mr)) {
+				ct.click();
+				break;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public void methodChange(String mc) {
+		c.click();
+		List<WebElement> change = driver.findElement(By.xpath("//ul[@role='listbox']")).findElements(By.tagName("li"));
+		for(WebElement ct : change) {
+			String cte = ct.getText();
+			if(cte.equalsIgnoreCase(mc)) {
+				ct.click();
+				break;
+			}
+		}
+	}
+
+	
+		
+		
+
+		
+		
 	
 
 }
+
+	
+
+	
+	
