@@ -20,6 +20,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.PageFactory;
 
+import EcommercePages.Incidents;
 import EcommercePages.RegisterPage;
 import EcommercePages.changePage;
 import EcommercePages.login;
@@ -52,6 +53,7 @@ public class SingleDepartmentOnboarding  {
 	RegisterPage rp;
 	login l;
 	changePage c;
+	Incidents inc;
 	
 //	LoginPage lp = new LoginPage(driver);
 	
@@ -673,6 +675,82 @@ public void select_the_change_type(String string) {
     
 }
 
+//------Incidents--------------------
+@Then("Click on incidents and click on Create New Ticket")
+public void click_on_incidents_and_click_on_create_new_ticket() {
+   
+	inc = new Incidents(driver);
+	inc.incidentsButton();
+	inc.createNewTicket();
+}
+
+@Then("Select the role {string}")
+public void select_the_role(String string) {
+    
+	inc = new Incidents(driver);
+	inc.selectRole(string);
+	
+}
+
+@Then("Click the Next button in page")
+public void click_the_next_button_in_page() throws InterruptedException {
+    
+	inc = new Incidents(driver);
+	inc.nextButton();
+}
+
+@Then("Subject {string}")
+public void subject(String string) {
+    
+	inc = new Incidents(driver);
+	inc.enterSubject(string);
+}
+@Then("Enter description {string}")
+public void enter_description(String string) {
+    
+	inc = new Incidents(driver);
+	inc.description(string);
+}
+
+@Then("Select Category {string}")
+public void select_category(String string) {
+    
+	inc = new Incidents(driver);
+	inc.category(string);
+}
+@Then("Select Sub Category {string}")
+public void select_sub_category(String string) {
+    
+	inc = new Incidents(driver);
+	inc.subCategory(string);
+}
+@Then("Select Item Category {string}")
+public void select_item_category(String string) {
+    
+	inc = new Incidents(driver);
+	inc.itemCategory(string);
+}
+
+@Then("Select location {string}")
+public void select_location(String string) {
+    
+	inc = new Incidents(driver);
+	inc.location(string);
+}
+
+@Then("Click Submit button")
+public void click_submit_button() throws InterruptedException {
+    
+	inc = new Incidents(driver);
+	inc.clickSubmit();
+}
+
+@Then("Check Success Popup is displayed.")
+public void check_success_popup_is_displayed() {
+    
+	inc = new Incidents(driver);
+	inc.successPopup();
+}
 
 
 
