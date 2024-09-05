@@ -113,7 +113,43 @@ public class Changes {
 		driver.findElement(By.xpath("(//input[@class='MuiInputBase-input MuiOutlinedInput-input css-1q5k7z'])[3]")).click();
 		driver.findElement(By.name("planned_start_date")).sendKeys("06062024");
 		
+		// Start Time
+		driver.findElement(By.name("planned_start_time")).sendKeys("1010");
 		
+	/*	// End Date
+		driver.findElement(By.name("planned_end_date")).sendKeys("11112024");
+		
+		// End Time
+		driver.findElement(By.name("planned_end_time")).sendKeys("1200"); */
+		
+		// Category
+		driver.findElement(By.xpath("(//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-1y8gbwp'])[8]")).click();
+		List<WebElement> gor = driver.findElement(By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']")).findElements(By.tagName("li"));
+		for(WebElement ct : gor) {
+			String tt =ct.getText();
+			if(tt.equalsIgnoreCase("BUSINESS APPLICATION")) {
+				ct.click();
+				break;
+			}
+			
+		}
+		
+		// Before Change
+		driver.findElement(By.name("before_change")).sendKeys("Issue need to be resolved");
+		
+		// After Change
+		driver.findElement(By.name("after_change")).sendKeys("Issue solved");
+		
+		// Location
+		driver.findElement(By.xpath("(//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-1y8gbwp'])[11]")).click();
+		List<WebElement> loc = driver.findElement(By.xpath("//ul[@role='listbox']")).findElements(By.tagName("li"));
+		for(WebElement location: loc) {
+			String lt =location.getText();
+			if(lt.equalsIgnoreCase("Mulu")) {
+				location.click();
+				break;
+			}
+		}
 		
 	}
 	
