@@ -750,7 +750,121 @@ public void check_success_popup_is_displayed() {
     
 	inc = new Incidents(driver);
 	inc.successPopup();
+	
 }
+
+//--------------------Butterfly Effect-------------------------------------
+@Given("url of butterfly effect")
+public void url_of_butterfly_effect() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Click on the Booking Service tab")
+public void click_on_the_booking_service_tab() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Click on the View More button of butterfly effect")
+public void click_on_the_view_more_button_of_butterfly_effect() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Click on the here link")
+public void click_on_the_here_link() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Select the Airport {string}")
+public void select_the_airport(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter the full Name {string}")
+public void enter_the_full_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter the Airlines {string}")
+public void enter_the_airlines(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter the passport number {string}")
+public void enter_the_passport_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter flight number {string}")
+public void enter_flight_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Select passport issuing country {string}")
+public void select_passport_issuing_country(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter date of visit {string}")
+public void enter_date_of_visit(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter the contact number {string}")
+public void enter_the_contact_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter guardian full name {string}")
+public void enter_guardian_full_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter address {int} {string}")
+public void enter_address(Integer int1, String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter guardian passport number {string}")
+public void enter_guardian_passport_number(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("select the gender {string}")
+public void select_the_gender(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("enter nric {string}")
+public void enter_nric(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter city and postal code {string} {string}")
+public void enter_city_and_postal_code(String string, String string2) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter Age {string}")
+public void enter_age(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Select the country")
+public void select_the_country() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("Enter email address {string}")
+public void enter_email_address(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@And("Click on the check boxes")
+public void click_on_the_check_boxes() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
 
 
 

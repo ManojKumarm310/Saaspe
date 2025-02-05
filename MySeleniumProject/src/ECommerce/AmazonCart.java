@@ -1,22 +1,60 @@
 package ECommerce;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.GeckoDriverInfo;
+
+import configuration.propertyDetails;
 
 public class AmazonCart {
 
-	public static void main(String[] args) throws InterruptedException {
+	//public static String browsername;
+
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
-		driver.manage().window().maximize();
+	  /*  String browsername = null;
+		WebDriver driver = null;
+		propertyDetails.getProperties();
+		
+		if(browsername.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+			 driver = new ChromeDriver();
+		}else {
+
+			if(browsername.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver", "chromedriver.exe");
+				// driver = new ChromeDriver();
+		} */
+		
+		FileInputStream fis = new FileInputStream("C:\\Users\\Mindgraph-MG\\git\\Saaspe\\MySeleniumProject\\src\\configuration\\config.properties");
+		Properties p = new Properties();
+		p.load(fis);
+		String browsername =p.getProperty("browser");
+		System.out.println(browsername);
+		
+		if(browsername.equalsIgnoreCase("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+			WebDriver driver = new ChromeDriver(); 
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.get("https://www.amazon.in/");
+		}
+		
+	/*	System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		WebDriver driver = new ChromeDriver(); */
+	/*	driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get("https://www.amazon.in/");
+		driver.get("https://www.amazon.in/"); 
+		
 		Thread.sleep(2000);
 		driver.findElement(By.id("nav-link-accountList-nav-line-1")).click();
 		Thread.sleep(2000);
@@ -37,8 +75,9 @@ public class AmazonCart {
 			 sum = sum + number;
 			
 		}
-		System.out.println(sum);
+		System.out.println(sum); 
 
-	}
+	} */
 
+}
 }

@@ -9,8 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 
 	
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features = "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\SaaSpe_Application\\src\\test\\java\\FeatureFiles\\Incidents.feature", 
-	glue = "stepDefenitions", dryRun = false,
+	@CucumberOptions(features = "C:\\Users\\Mindgraph-MG\\git\\Saaspe\\SaaSpe_Application\\src\\test\\java\\FeatureFiles\\ButterflyEffect.feature", 
+	glue = "stepDefenitions", dryRun = true,
 	plugin = { "pretty","html:target/cucumber-reports.html" }
 	)
 	
